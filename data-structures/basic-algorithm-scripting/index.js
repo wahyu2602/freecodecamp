@@ -111,3 +111,93 @@ let h = titleCase("sHoRt AnD sToUt");
 // console.log(h);
 
 
+// Slice(Mengiris) dan Splice(Menyampung) dalam array ----------------------------
+function frankenSplice(arr1, arr2, n) {
+  const dataArry = [];
+  const awal = arr2.slice(0, n);
+  const akhir = arr2.slice(n);
+  for (let i = 0; i < awal.length; i++) {
+    const eAwal = awal[i];
+    dataArry.push(eAwal);
+  }
+  for (let i = 0; i < arr1.length; i++) {
+    const arr = arr1[i];
+    dataArry.push(arr);
+  }
+  for (let i = 0; i < akhir.length; i++) {
+    const eAkhir = akhir[i];
+    dataArry.push(eAkhir);
+  }
+  return dataArry;
+}
+let i = frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees", "toes"], 2);
+// console.log(i);
+
+
+// Hanya mengembalikan nilai String dan Number ------------------------------------
+function bouncer(arr) {
+  const dataArr = []
+  for (let i = 0; i < arr.length; i++) {
+    const element1 = arr[i];
+    if (typeof element1 === 'number' && element1 > 0 || typeof element1 === 'string' && element1 !== NaN && element1 !== "") {
+      dataArr.push(element1);
+    }
+  }
+  return dataArr;
+}
+let j = bouncer([null, NaN, 1, 2, undefined]);
+// console.log(j);
+
+
+// Mengembalikan indeks terendah di mana nilai ----------------------------------
+function getIndexToIns(arr, num) {
+  let hasil = [];
+  const urutan = arr.sort((a, b) => a - b);
+  const urutanL = urutan.length;
+  urutan.forEach((element, i) => {
+    if (element >= num) {
+      hasil.push(i);
+    }
+  });
+  if (num > urutan[urutanL - 1]) {
+    return urutanL;
+  }
+  if (urutan.length === 0) {
+    return 0;
+  } else {
+    return hasil[0];
+  }
+}
+let k = getIndexToIns([10, 20, 30, 40, 50], 35);
+// console.log(k);
+
+
+// Mengembalikan nilai true atau false ----------------------------------------
+function mutation(arr) {
+  const arr1 = arr[0].toLowerCase();
+  const arr2 = arr[1].toLowerCase();
+  for (let i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) < 0) return false;
+  }
+  return true;
+}
+let l = mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]);
+// console.log(l);
+
+
+// Membagi array (Chunky Monkey) --------------------------------------------
+function chunkArrayInGroups(arr, size) {
+  let array = [];
+  let tambah = 0;
+  for (let i = 0; i <= arr.length / size; i++) {
+    tambah += size;
+    let hasil = arr.slice(i * size, tambah);
+    if (hasil.length !== 0) {
+      array.push(hasil);
+    }
+  }
+  return array;
+}
+
+let m = chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2);
+// console.log(m);
