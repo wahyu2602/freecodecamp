@@ -201,3 +201,50 @@ function chunkArrayInGroups(arr, size) {
 
 let m = chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2);
 // console.log(m);
+
+
+
+
+
+// example coderbyte ----------------------
+function StringChallenge(str) {
+
+  // code goes here 
+  let kata = str.split(/\*|\-|\s/);
+  let dataKata = [];
+  for (let i = 0; i < kata.length; i++) {
+    const perkata = kata[i];
+    const perkataL = perkata.length;
+    const kataDepan = perkata.slice(0, 1).toUpperCase();
+    let hasilKata = kataDepan + perkata.slice(1, perkataL).toLowerCase();
+    console.log(perkata);
+    dataKata.push(hasilKata);
+  }
+  return dataKata.join('');
+
+}
+
+// keep this function call here 
+// console.log(StringChallenge("cats AND*Dogs-are Awesome"));
+
+
+function ArrayChallenge(arr) {
+
+  // code goes here 
+  for (let i = 0; i < arr.length; i++) {
+    const element = arr[i];
+    const elementOne = arr[i + 1];
+    // console.log(element);
+    // console.log(elementOne);
+    if (elementOne < element) {
+      console.log(element);
+    }
+    // console.log(element);
+  }
+  // return arr;
+
+}
+ArrayChallenge([14, 20, 4, 12, 5, 11]);
+
+// keep this function call here 
+// console.log(ArrayChallenge([10, 12, 4, 5, 9]));
