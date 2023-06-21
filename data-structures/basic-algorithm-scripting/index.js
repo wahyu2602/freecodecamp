@@ -248,3 +248,10 @@ ArrayChallenge([14, 20, 4, 12, 5, 11]);
 
 // keep this function call here 
 // console.log(ArrayChallenge([10, 12, 4, 5, 9]));
+
+
+
+// merubah nilai ke ribuan dengan koma
+var numberString = '20000000'
+var formattedNumber = parseFloat(numberString).toLocaleString('en')
+console.log(formattedNumber)
